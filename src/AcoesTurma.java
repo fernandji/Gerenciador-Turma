@@ -1,12 +1,8 @@
-
-
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class AcoesTurma {
 
-    
     Map<String, Aluno> alunos = new LinkedHashMap<>();
 
     public void incluirAluno(String nome, double p1, double p2) {
@@ -46,10 +42,11 @@ public class AcoesTurma {
             System.out.println("\nAluno não encontrado!\n");
         }
     }
-    public boolean verificarAluno(String nome){
-        if(alunos.containsKey(nome)){
+
+    public boolean verificarAluno(String nome) {
+        if (alunos.containsKey(nome)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -61,6 +58,6 @@ public class AcoesTurma {
         alunos.put(nome2, aluno2);
         aluno2.imprimeAluno();
         System.out.println("\nAluno atualizado com sucesso!\n");
-        
+
     }
 }
