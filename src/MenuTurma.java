@@ -41,7 +41,7 @@ public class MenuTurma {
 
                     // VISUALIZAR REGISTROS
                     case 2:
-                        System.out.println("1 - Visualizar todos os registros\n2 - Visualizar aluno específico");
+                        System.out.println("\n1 - Visualizar todos os registros\n2 - Visualizar aluno específico\n3 - Visualizar média da turma ");
                         int escolha = leitor.nextInt();
                         if (escolha == 1) {
                             acoes.imprimirTodos();
@@ -49,6 +49,8 @@ public class MenuTurma {
                             System.out.print("Digite o nome do aluno a ser visualizado: ");
                             nome = leitor.next();
                             acoes.imprimirEspecifico(nome);
+                        } else if (escolha == 3){
+                            acoes.calcularMediaTurma();
                         } else {
                             System.out.println("Opção inválida!");
                         }

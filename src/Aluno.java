@@ -47,21 +47,21 @@ public class Aluno {
         return p2;
     }
 
+    public double getMedia() {
+        return (p1 + 2 * p2) / 3;
+    }
+
     public void imprimeAluno() {
         System.out.println("Nome: " + this.nome);
         System.out.println("Nota P1: " + this.p1);
         System.out.println("Nota P2: " + this.p2);
-        System.out.printf("%s%.2f%n", "Média: ", calculoMedia());
+        System.out.printf("%s%.2f%n", "Média: ", getMedia());
         System.out.println("Status: " + alunoStatus());
         System.out.println("----------------");
     }
 
-    public double calculoMedia() {
-        return (p1 + 2 * p2) / 3;
-    }
-
     public String alunoStatus() {
-        if (calculoMedia() >= 6) {
+        if (getMedia() >= 6) {
             return "Aprovado";
         } else {
             return "Reprovado";

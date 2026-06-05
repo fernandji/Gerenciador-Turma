@@ -60,4 +60,17 @@ public class AcoesTurma {
         System.out.println("\nAluno atualizado com sucesso!\n");
 
     }
+
+    public void calcularMediaTurma() {
+        if (alunos.isEmpty()) {
+            System.out.println("Nenhum aluno cadastrado. ");
+        } else {
+            double soma = 0;
+            for (Aluno aluno : alunos.values()) {
+                soma += aluno.getMedia();
+            }
+            double mediaTurma = soma / alunos.size();
+            System.out.printf("Média da Turma: %.2f%n", mediaTurma);
+        }
+    }
 }
