@@ -66,6 +66,15 @@ public class Aluno {
         System.out.println("Status: " + alunoStatus());
         System.out.println("----------------");
     }
+    @Override
+    public String toString(){
+        return "\n\nID: "+ this.id+
+        "\nNome: " + this.nome+
+        "\nP1: " + this.p1+
+        "\nP2: " + this.p2+
+        "\nMédia:"+ getMedia()+
+        "\nStatus: "+ alunoStatus();
+    }
 
     public String alunoStatus() {
         if (getMedia() >= 6) {

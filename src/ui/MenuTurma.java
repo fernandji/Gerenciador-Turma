@@ -30,26 +30,27 @@ public class MenuTurma {
                     double p1 = leitor.nextDouble();
                     System.out.print("Insira a nota P2: ");
                     double p2 = leitor.nextDouble();
-                    acoes.incluirAluno(nome, p1, p2);
+                    acoes.salvarAluno(nome, p1, p2);
                     break;
 
                 // VISUALIZAR REGISTROS
-                // case 2:
-                //     System.out.println(
-                //             "\n1 - Visualizar todos os registros\n2 - Visualizar aluno específico\n3 - Visualizar média da turma ");
-                //     int escolha = leitor.nextInt();
-                //     if (escolha == 1) {
-                //         acoes.imprimirTodos();
-                //     } else if (escolha == 2) {
-                //         System.out.print("Digite o nome do aluno a ser visualizado: ");
-                //         nome = leitor.next();
-                //         acoes.imprimirEspecifico(nome);
-                //     } else if (escolha == 3) {
-                //         acoes.calcularMediaTurma();
-                //     } else {
-                //         System.out.println("Opção inválida!");
-                //     }
-                //     break;
+                case 2:
+                    System.out.println(
+                            "\n1 - Visualizar todos os registros\n2 - Visualizar aluno específico\n3 - Visualizar média da turma ");
+                    int escolha = leitor.nextInt();
+                    if (escolha == 1) {
+                        acoes.visualizarTodos();
+                    }
+                    // } else if (escolha == 2) {
+                    //     System.out.print("Digite o nome do aluno a ser visualizado: ");
+                    //     nome = leitor.next();
+                    //     acoes.imprimirEspecifico(nome);
+                    // } else if (escolha == 3) {
+                    //     acoes.calcularMediaTurma();
+                    // } else {
+                    //     System.out.println("Opção inválida!");
+                    // }
+                    break;
 
                 // // EXCLUIR ALUNO
                 // case 3:
