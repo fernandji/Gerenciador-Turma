@@ -4,9 +4,15 @@ public class Aluno {
     private double p2;
 
     public Aluno(String nome, double p1, double p2) {
+        if(p1 < 0 || p1 > 10){
+            throw new IllegalArgumentException("Erro ao adicionar aluno. \nNota deve ser um número de 0 a 10!");
+        }
+        if(p2 < 0 || p2 > 10){
+            throw new IllegalArgumentException("Erro ao adicionar aluno. \nNota deve ser um número de 0 a 10!");
+        }
         this.nome = nome;
-        setP1(p1);
-        setP2(p2);
+        this.p1 = p1;
+        this.p2 = p2; 
     }
 
     public void setNome(String nome) {
@@ -17,30 +23,16 @@ public class Aluno {
         return nome;
     }
 
-    public boolean setP1(double p1) {
-        if (p1 > 10 || p1 < 0) {
-            System.out.println("Nota inválida! A nota deve ser um número de 0 a 10!");
-            return false;
-        } else {
-            this.p1 = p1;
-            return true;
-        }
-
+    public void setP1(double p1) {
+        this.p1 = p1;
     }
 
     public double getP1() {
         return p1;
     }
 
-    public boolean setP2(double p2) {
-        if (p2 > 10 || p2 < 0) {
-            System.out.println("Nota inválida! A nota deve ser um número de 0 a 10!");
-            return false;
-        } else {
-            this.p2 = p2;
-            return true;
-        }
-
+    public void setP2(double p2) {
+        this.p2 = p2;
     }
 
     public double getP2() {

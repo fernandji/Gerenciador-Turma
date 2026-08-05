@@ -6,18 +6,22 @@ public class AcoesTurma {
     Map<String, Aluno> alunos = new LinkedHashMap<>();
 
     public void incluirAluno(String nome, double p1, double p2) {
-        Aluno aluno = new Aluno(nome, p1, p2);
-        alunos.put(nome, aluno);
-        System.out.println("\nAluno adicionado com sucesso!\n");
-        aluno.imprimeAluno();
+        try{
+            Aluno aluno = new Aluno(nome, p1, p2);
+            alunos.put(nome, aluno);
+            System.out.println("\nAluno adicionado com sucesso!\n");
+            aluno.imprimeAluno();
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public void imprimirTodos() {
         if (alunos.isEmpty()) {
             System.out.println("\nNenhum registro encontrado!\n");
         } else {
-            for (String nome : alunos.keySet()) {
-                Aluno aluno = alunos.get(nome);
+            for (Aluno aluno : alunos.values()) {
                 aluno.imprimeAluno();
             }
         }
@@ -53,11 +57,16 @@ public class AcoesTurma {
 
     public void atualizarAluno(String nome, String nome2, double p1, double p2) {
         Aluno aluno = alunos.get(nome);
-        Aluno aluno2 = new Aluno(nome2, p1, p2);
-        alunos.remove(nome, aluno);
-        alunos.put(nome2, aluno2);
-        aluno2.imprimeAluno();
-        System.out.println("\nAluno atualizado com sucesso!\n");
+        try{
+            Aluno aluno2 = new Aluno(nome2, p1, p2);
+            alunos.remove(nome, aluno);
+            alunos.put(nome2, aluno2);
+            aluno2.imprimeAluno();
+            System.out.println("\nAluno atualizado com sucesso!\n");
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
 
     }
 
