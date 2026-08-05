@@ -1,5 +1,6 @@
 package model;
 public class Aluno {
+    private int id;
     private String nome;
     private double p1;
     private double p2;
@@ -14,6 +15,19 @@ public class Aluno {
         this.nome = nome;
         this.p1 = p1;
         this.p2 = p2; 
+    }
+
+        public Aluno(int id, String nome, double p1, double p2) {
+            this(nome, p1, p2);
+            this.id = id;
+    }
+
+    public int getId(){
+        return id;
+    }
+    
+    public void setId(int id){
+        this.id = id;
     }
 
     public void setNome(String nome) {

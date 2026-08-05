@@ -34,51 +34,51 @@ public class MenuTurma {
                     break;
 
                 // VISUALIZAR REGISTROS
-                case 2:
-                    System.out.println(
-                            "\n1 - Visualizar todos os registros\n2 - Visualizar aluno específico\n3 - Visualizar média da turma ");
-                    int escolha = leitor.nextInt();
-                    if (escolha == 1) {
-                        acoes.imprimirTodos();
-                    } else if (escolha == 2) {
-                        System.out.print("Digite o nome do aluno a ser visualizado: ");
-                        nome = leitor.next();
-                        acoes.imprimirEspecifico(nome);
-                    } else if (escolha == 3) {
-                        acoes.calcularMediaTurma();
-                    } else {
-                        System.out.println("Opção inválida!");
-                    }
-                    break;
+                // case 2:
+                //     System.out.println(
+                //             "\n1 - Visualizar todos os registros\n2 - Visualizar aluno específico\n3 - Visualizar média da turma ");
+                //     int escolha = leitor.nextInt();
+                //     if (escolha == 1) {
+                //         acoes.imprimirTodos();
+                //     } else if (escolha == 2) {
+                //         System.out.print("Digite o nome do aluno a ser visualizado: ");
+                //         nome = leitor.next();
+                //         acoes.imprimirEspecifico(nome);
+                //     } else if (escolha == 3) {
+                //         acoes.calcularMediaTurma();
+                //     } else {
+                //         System.out.println("Opção inválida!");
+                //     }
+                //     break;
 
-                // EXCLUIR ALUNO
-                case 3:
-                    System.out.print("Digite o nome do aluno a ser excluído: ");
-                    nome = leitor.next();
-                    acoes.excluirAluno(nome);
-                    break;
+                // // EXCLUIR ALUNO
+                // case 3:
+                //     System.out.print("Digite o nome do aluno a ser excluído: ");
+                //     nome = leitor.next();
+                //     acoes.excluirAluno(nome);
+                //     break;
 
-                // ATUALIZAR ALUNO
-                case 4:
-                    System.out.print("Digite o nome do aluno para atualizar cadastro: ");
-                    nome = leitor.next();
-                    if (acoes.verificarAluno(nome)) {
-                        System.out.println("Sobrescreva as informações: ");
-                        System.out.print("Insira o nome: ");
-                        String nome2 = leitor.next();
-                        System.out.print("Insira a nota P1: ");
-                        p1 = leitor.nextDouble();
-                        System.out.print("Insira a nota P2: ");
-                        p2 = leitor.nextDouble();
-                        acoes.atualizarAluno(nome, nome2, p1, p2);
-                        break;
-                    } else {
-                        System.out.println("\nAluno não encontrado!\n");
-                        break;
-                    }
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
+                // // ATUALIZAR ALUNO
+                // case 4:
+                //     System.out.print("Digite o nome do aluno para atualizar cadastro: ");
+                //     nome = leitor.next();
+                //     if (acoes.verificarAluno(nome)) {
+                //         System.out.println("Sobrescreva as informações: ");
+                //         System.out.print("Insira o nome: ");
+                //         String nome2 = leitor.next();
+                //         System.out.print("Insira a nota P1: ");
+                //         p1 = leitor.nextDouble();
+                //         System.out.print("Insira a nota P2: ");
+                //         p2 = leitor.nextDouble();
+                //         acoes.atualizarAluno(nome, nome2, p1, p2);
+                //         break;
+                //     } else {
+                //         System.out.println("\nAluno não encontrado!\n");
+                //         break;
+                //     }
+                // default:
+                //     System.out.println("Opção inválida!");
+                //     break;
             }
         }
 
