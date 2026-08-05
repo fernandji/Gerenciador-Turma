@@ -1,3 +1,4 @@
+package model;
 public class Aluno {
     private String nome;
     private double p1;
