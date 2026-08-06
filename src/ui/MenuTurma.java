@@ -24,8 +24,9 @@ public class MenuTurma {
 
                 // INCLUIR ALUNO
                 case 1:
+                    leitor.nextLine();
                     System.out.print("Insira o nome: ");
-                    String nome = leitor.next();
+                    String nome = leitor.nextLine();
                     System.out.print("Insira a nota P1: ");
                     double p1 = leitor.nextDouble();
                     System.out.print("Insira a nota P2: ");
@@ -53,11 +54,11 @@ public class MenuTurma {
                     break;
 
                 // // EXCLUIR ALUNO
-                // case 3:
-                //     System.out.print("Digite o nome do aluno a ser excluído: ");
-                //     nome = leitor.next();
-                //     acoes.excluirAluno(nome);
-                //     break;
+                case 3:
+                    System.out.print("Digite o ID do aluno a ser excluído: ");
+                    int id = leitor.nextInt();
+                    acoes.excluirAluno(id);
+                    break;
 
                 // // ATUALIZAR ALUNO
                 // case 4:

@@ -58,14 +58,6 @@ public class Aluno {
         return (p1 + 2 * p2) / 3;
     }
 
-    public void imprimeAluno() {
-        System.out.println("Nome: " + this.nome);
-        System.out.println("Nota P1: " + this.p1);
-        System.out.println("Nota P2: " + this.p2);
-        System.out.printf("%s%.2f%n", "Média: ", getMedia());
-        System.out.println("Status: " + alunoStatus());
-        System.out.println("----------------");
-    }
     @Override
     public String toString(){
         return "\n\nID: "+ this.id+

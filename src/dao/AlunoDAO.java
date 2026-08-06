@@ -18,8 +18,7 @@ public class AlunoDAO {
                 VALUES (?, ?, ?)
                 """;
 
-        try (
-                Connection connection = ConnectionFactory.getConnection();
+        try (Connection connection = ConnectionFactory.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql);) {
 
             statement.setString(1, aluno.getNome());
@@ -33,35 +32,45 @@ public class AlunoDAO {
         }
     }
 
-
-    public List<Aluno> listar(){
+    public List<Aluno> listar() {
         List<Aluno> alunos = new ArrayList<>();
         String sql = """
-        SELECT * FROM alunos
-        """;
+                SELECT * FROM alunos
+                """;
 
-        try(Connection connection = ConnectionFactory.getConnection();
+        try (Connection connection = ConnectionFactory.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql);
-                ResultSet rs = statement.executeQuery();){
+                ResultSet rs = statement.executeQuery();) {
 
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                double p1 = rs.getDouble("p1");
+                double p2 = rs.getDouble("p2");
+                Aluno aluno = new Aluno(id, nome, p1, p2);
+                alunos.add(aluno);
+            }
 
-                    while(rs.next()){
-                        int id = rs.getInt("id");
-                        String nome = rs.getString("nome");
-                        double p1 = rs.getDouble("p1");
-                        double p2 = rs.getDouble("p2");
-                        Aluno aluno = new Aluno(id, nome, p1, p2);
-                        alunos.add(aluno);
-                    }
-                    if(alunos.isEmpty()){
-                        System.out.println("Nenhum aluno encontrado!");
-                    }
-                    
-
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return alunos;
+    }
+
+    public void deletar(int id){
+        String sql = """
+                DELETE FROM alunos
+                WHERE id = ?
+                """;
+
+        try (Connection connection = ConnectionFactory.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);) {
+            
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

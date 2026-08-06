@@ -11,7 +11,7 @@ public class AcoesTurma {
             Aluno aluno = new Aluno(nome, p1, p2);
             alunoDAO.salvar(aluno);
             System.out.println("\nAluno adicionado com sucesso!\n");
-            aluno.imprimeAluno();
+            System.out.println(aluno);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -22,26 +22,19 @@ public class AcoesTurma {
         System.out.println(alunoDAO.listar());
     }
 
+    // public void imprimirEspecifico(String nome) {
+    // if (alunos.containsKey(nome)) {
+    // Aluno aluno = alunos.get(nome);
+    // aluno.imprimeAluno();
+    // } else {
+    // System.out.println("\nAluno não encontrado!\n");
+    // }
+    // }
+
+    public void excluirAluno(int id) {
+        alunoDAO.deletar(id);
+    }
 }
-// public void imprimirEspecifico(String nome) {
-// if (alunos.containsKey(nome)) {
-// Aluno aluno = alunos.get(nome);
-// aluno.imprimeAluno();
-// } else {
-// System.out.println("\nAluno não encontrado!\n");
-// }
-// }
-
-// public void excluirAluno(String nome) {
-// if (alunos.containsKey(nome)) {
-// alunos.remove(nome);
-
-// System.out.println("\nAluno excluído!\n");
-// } else {
-
-// System.out.println("\nAluno não encontrado!\n");
-// }
-// }
 
 // public boolean verificarAluno(String nome) {
 // if (alunos.containsKey(nome)) {
