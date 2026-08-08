@@ -74,14 +74,6 @@ public class AcoesTurma {
         System.out.println("Aluno excluído com sucesso!");
     }
 
-    // public boolean verificarAluno(String nome) {
-    // if (alunos.containsKey(nome)) {
-    // return true;
-    // } else {
-    // return false;
-    // }
-    // }
-
     public void atualizarNome(int id, String nome) {
         if (alunoDAO.atualizarNome(id, nome)) {
             System.out.println("\nNome de ID:" + id + " foi atualizado com sucesso!\n");
@@ -106,16 +98,28 @@ public class AcoesTurma {
         }
     }
 
-    // public void calcularMediaTurma() {
-    //     if (alunos.isEmpty()) {
-    //         System.out.println("Nenhum aluno cadastrado. ");
-    //     } else {
-    //         double soma = 0;
-    //         for (Aluno aluno : alunos.values()) {
-    //             soma += aluno.getMedia();
-    //         }
-    //         double mediaTurma = soma / alunos.size();
-    //         System.out.printf("Média da Turma: %.2f%n", mediaTurma);
-    //     }
-    // }
+    public double calcularMediaTurma() {
+        List<Aluno> alunos = alunoDAO.listar();
+        if (alunos.isEmpty()) {
+            System.out.println("Nenhum aluno encontrado!");
+        }
+        double total = 0;
+        for (Aluno aluno : alunos) {
+            total += aluno.getMedia();
+        }
+        return total / alunos.size();
+
+    }
 }
+// public void calcularMediaTurma() {
+// if (alunos.isEmpty()) {
+// System.out.println("Nenhum aluno cadastrado. ");
+// } else {
+// double soma = 0;
+// for (Aluno aluno : alunos.values()) {
+// soma += aluno.getMedia();
+// }
+// double mediaTurma = soma / alunos.size();
+// System.out.printf("Média da Turma: %.2f%n", mediaTurma);
+// }
+// }
