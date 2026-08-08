@@ -1,10 +1,11 @@
 package ui;
-import java.util.Scanner;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 import service.AcoesTurma;
 
 public class MenuTurma {
-    Scanner leitor = new Scanner(System.in);
+    Scanner leitor = new Scanner(System.in, StandardCharsets.UTF_8);
     AcoesTurma acoes = new AcoesTurma();
 
     public void menuPrincipal() {
@@ -41,12 +42,12 @@ public class MenuTurma {
                     int escolha = leitor.nextInt();
                     if (escolha == 1) {
                         acoes.visualizarTodos();
+                    } else if (escolha == 2) {
+                        System.out.print("Digite o ID do aluno a ser visualizado: ");
+                        int id = leitor.nextInt();
+                        acoes.imprimirPorID(id);
                     }
-                    // } else if (escolha == 2) {
-                    //     System.out.print("Digite o nome do aluno a ser visualizado: ");
-                    //     nome = leitor.next();
-                    //     acoes.imprimirEspecifico(nome);
-                    // } else if (escolha == 3) {
+                    // else if (escolha == 3) {
                     //     acoes.calcularMediaTurma();
                     // } else {
                     //     System.out.println("Opção inválida!");
@@ -61,26 +62,24 @@ public class MenuTurma {
                     break;
 
                 // // ATUALIZAR ALUNO
-                // case 4:
-                //     System.out.print("Digite o nome do aluno para atualizar cadastro: ");
-                //     nome = leitor.next();
-                //     if (acoes.verificarAluno(nome)) {
-                //         System.out.println("Sobrescreva as informações: ");
-                //         System.out.print("Insira o nome: ");
-                //         String nome2 = leitor.next();
-                //         System.out.print("Insira a nota P1: ");
-                //         p1 = leitor.nextDouble();
-                //         System.out.print("Insira a nota P2: ");
-                //         p2 = leitor.nextDouble();
-                //         acoes.atualizarAluno(nome, nome2, p1, p2);
-                //         break;
-                //     } else {
-                //         System.out.println("\nAluno não encontrado!\n");
-                //         break;
-                //     }
-                // default:
-                //     System.out.println("Opção inválida!");
-                //     break;
+                case 4:
+                    System.out.println("O que deseja atualizar?");
+                    System.out.println(" 1 - Nome\n 2 - P1\n 3 - P2");
+                    opcao = leitor.nextInt();
+                    if(opcao == 1){
+                        System.out.print("Digite o ID do aluno a ser atualizado: ");
+                        id = leitor.nextInt();
+                        leitor.nextLine();
+                        System.out.print("Digite o nome atualizado: ");
+                        nome = leitor.nextLine();
+                        acoes.atualizarAluno(id, nome);
+                    } else if(opcao == 2){
+                        System.out.println("Ainda não ta pronto! ");
+                    }
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
             }
         }
 

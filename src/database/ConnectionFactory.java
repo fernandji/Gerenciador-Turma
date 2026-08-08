@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     public static Connection getConnection() throws SQLException{
         return DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/gerenciador_turma",
+            "jdbc:mysql://localhost:3306/gerenciador_turma?useUnicode=true&characterEncoding=UTF-8",
             "root",
             "Admin123"
         ); 

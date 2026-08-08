@@ -1,6 +1,4 @@
 package application;
-
-
 import ui.MenuTurma;
 
 public class Main {

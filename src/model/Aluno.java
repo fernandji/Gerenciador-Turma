@@ -60,11 +60,11 @@ public class Aluno {
 
     @Override
     public String toString(){
-        return "\n\nID: "+ this.id+
+        return 
         "\nNome: " + this.nome+
         "\nP1: " + this.p1+
         "\nP2: " + this.p2+
-        "\nMédia:"+ getMedia()+
+        "\nMédia: "+ getMedia()+
         "\nStatus: "+ alunoStatus();
     }
 
