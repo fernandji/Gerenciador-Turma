@@ -37,7 +37,6 @@ public class AlunoDAO {
     }
 
     public void salvar(Aluno aluno) {
-
         String sql = """
                 INSERT INTO alunos (nome, p1, p2)
                 VALUES (?, ?, ?)
@@ -78,6 +77,7 @@ public class AlunoDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
         return alunos;
     }
@@ -104,10 +104,45 @@ public class AlunoDAO {
                 SET nome = ?
                 WHERE id = ?
                 """;
-
         try (Connection connection = ConnectionFactory.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(sqlNome);
             statement.setString(1, nome);
+            statement.setInt(2, id);
+            return statement.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean atualizarP1(int id, double p1) {
+        String sqlP1 = """
+                UPDATE alunos
+                SET p1 = ?
+                WHERE id = ?
+                """;
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sqlP1);
+            statement.setDouble(1, p1);
+            statement.setInt(2, id);
+            return statement.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean atualizarP2(int id, double p2) {
+        String sqlP2 = """
+                UPDATE alunos
+                SET p2 = ?
+                WHERE id = ?
+                """;
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sqlP2);
+            statement.setDouble(1, p2);
             statement.setInt(2, id);
             return statement.executeUpdate() > 0;
 

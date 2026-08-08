@@ -18,6 +18,7 @@ public class MenuTurma {
 
             opcao = leitor.nextInt();
             switch (opcao) {
+
                 // ENCERRA PROGRAMA
                 case 0:
                     System.out.println("Encerrando...");
@@ -37,8 +38,9 @@ public class MenuTurma {
 
                 // VISUALIZAR REGISTROS
                 case 2:
+                    System.out.print("O que deseja visualizar?");
                     System.out.println(
-                            "\n1 - Visualizar todos os registros\n2 - Visualizar aluno específico\n3 - Visualizar média da turma ");
+                            "\n 1 - Visualizar todos os registros\n 2 - Visualizar aluno específico\n 3 - Visualizar média da turma ");
                     int escolha = leitor.nextInt();
                     if (escolha == 1) {
                         acoes.visualizarTodos();
@@ -50,7 +52,7 @@ public class MenuTurma {
                     // else if (escolha == 3) {
                     //     acoes.calcularMediaTurma();
                     // } else {
-                    //     System.out.println("Opção inválida!");
+                    //     System.out.println("Insira uma opção válida!");
                     // }
                     break;
 
@@ -72,9 +74,21 @@ public class MenuTurma {
                         leitor.nextLine();
                         System.out.print("Digite o nome atualizado: ");
                         nome = leitor.nextLine();
-                        acoes.atualizarAluno(id, nome);
+                        acoes.atualizarNome(id, nome);
                     } else if(opcao == 2){
-                        System.out.println("Ainda não ta pronto! ");
+                        System.out.print("Digite o ID do aluno a ser atualizado: ");
+                        id = leitor.nextInt();
+                        System.out.print("Digite a nota P1 atualizada: ");
+                        p1 = leitor.nextDouble();
+                        acoes.atualizarP1(id, p1);
+                    } else if(opcao == 3){
+                        System.out.print("Digite o ID do aluno a ser atualizado: ");
+                        id = leitor.nextInt();
+                        System.out.print("Digite a nota P2 atualizada: ");
+                        p2 = leitor.nextDouble();
+                        acoes.atualizarP2(id, p2);
+                    } else {
+                        System.out.println("Insira uma opção válida!");
                     }
                     break;
                 default:

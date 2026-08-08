@@ -82,7 +82,7 @@ public class AcoesTurma {
     // }
     // }
 
-    public void atualizarAluno(int id, String nome) {
+    public void atualizarNome(int id, String nome) {
         if (alunoDAO.atualizarNome(id, nome)) {
             System.out.println("\nNome de ID:" + id + " foi atualizado com sucesso!\n");
         } else {
@@ -90,17 +90,32 @@ public class AcoesTurma {
         }
     }
 
+    public void atualizarP1(int id, double p1) {
+        if (alunoDAO.atualizarP1(id, p1)) {
+            System.out.println("\nA P1 de ID:" + id + " foi atualizado com sucesso!\n");
+        } else {
+            System.out.println("Não foi possível atualizar o aluno.");
+        }
+    }
+
+    public void atualizarP2(int id, double p2) {
+        if (alunoDAO.atualizarP2(id, p2)) {
+            System.out.println("\nA P2 de ID:" + id + " foi atualizado com sucesso!\n");
+        } else {
+            System.out.println("Não foi possível atualizar o aluno.");
+        }
+    }
+
+    // public void calcularMediaTurma() {
+    //     if (alunos.isEmpty()) {
+    //         System.out.println("Nenhum aluno cadastrado. ");
+    //     } else {
+    //         double soma = 0;
+    //         for (Aluno aluno : alunos.values()) {
+    //             soma += aluno.getMedia();
+    //         }
+    //         double mediaTurma = soma / alunos.size();
+    //         System.out.printf("Média da Turma: %.2f%n", mediaTurma);
+    //     }
+    // }
 }
-// public void calcularMediaTurma() {
-// if (alunos.isEmpty()) {
-// System.out.println("Nenhum aluno cadastrado. ");
-// } else {
-// double soma = 0;
-// for (Aluno aluno : alunos.values()) {
-// soma += aluno.getMedia();
-// }
-// double mediaTurma = soma / alunos.size();
-// System.out.printf("Média da Turma: %.2f%n", mediaTurma);
-// }
-// }
-// }
