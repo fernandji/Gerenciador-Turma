@@ -36,7 +36,7 @@ public class AlunoDAO {
         }
     }
 
-    public void salvar(Aluno aluno) {
+    public boolean salvar(Aluno aluno) {
         String sql = """
                 INSERT INTO alunos (nome, p1, p2)
                 VALUES (?, ?, ?)
@@ -49,10 +49,10 @@ public class AlunoDAO {
             statement.setDouble(2, aluno.getP1());
             statement.setDouble(3, aluno.getP2());
 
-            statement.executeUpdate();
-
+            return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -82,7 +82,7 @@ public class AlunoDAO {
         return alunos;
     }
 
-    public void deletar(int id) {
+    public boolean deletar(int id) {
         String sql = """
                 DELETE FROM alunos
                 WHERE id = ?
@@ -92,9 +92,11 @@ public class AlunoDAO {
                 PreparedStatement statement = connection.prepareStatement(sql);) {
 
             statement.setInt(1, id);
-            statement.executeUpdate();
+            return statement.executeUpdate() > 0;
+            
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
