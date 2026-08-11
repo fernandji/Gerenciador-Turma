@@ -1,7 +1,7 @@
 
 
 # Gerenciador-Turma
-Gerenciador de Turma simples em java desenvolvido para praticar POO(Programação Orientada a Objeto). O sistema permite, durante a sua execução, incluir, visualizar, atualizar e deletar alunos. Utilizando banco de dados MySQL para armazenar os dados e interação via Terminal.
+Gerenciador de Turma simples em Java desenvolvido para praticar POO(Programação Orientada a Objeto) e JDBC(Java Database Connectivity). O sistema permite, durante a sua execução, salvar, visualizar, atualizar e deletar alunos. Utilizando banco de dados MySQL para armazenar os dados e interação via Terminal.
 
 ## 📚 Funcionalidades
 
@@ -25,7 +25,7 @@ Gerenciador de Turma simples em java desenvolvido para praticar POO(Programaçã
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/Fernandji/Gerenciador-Turma.git
+git clone https://github.com/fernandji/Gerenciador-Turma.git
 ```
 
 ### 2. Entrar na pasta do projeto
@@ -43,7 +43,7 @@ javac *.java
 ### 4. Executar o programa
 
 ```bash
-java AlunoTest
+java application.Main
 ```
 
 ---
@@ -51,8 +51,9 @@ java AlunoTest
 ## 💻 Executando pelo VS Code
 
 1. Abra a pasta do projeto no VS Code
-2. Abra o arquivo `AlunoTest.java`
-3. Clique no botão ▶️ Run
+2. Abra a pasta `application`
+3. Abra o arquivo `Main.java`
+4. Clique no botão ▶️ Run
 
 ---
 
@@ -61,10 +62,11 @@ java AlunoTest
 Projeto criado para praticar:
 
 - Programação Orientada a Objetos
-- Estruturação de classes
 - Collections
 - Manipulação de dados
 - Lógica de programação em Java
+- JDBC
+- Banco de dados MySQL
 
 ---
 
